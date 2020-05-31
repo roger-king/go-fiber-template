@@ -1,0 +1,4 @@
+dist
+vendor
+docker-compose.yml
+.env

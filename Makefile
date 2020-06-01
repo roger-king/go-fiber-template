@@ -1,9 +1,14 @@
 setup:
-	go get -u github.com/valyala/quicktemplate
-	go get -u github.com/valyala/quicktemplate/qtc
+	go get -u github.com/google/wire/cmd/wire
 	
 start:
-	go run $(GO_FILES) & echo $$! > $(PID_FILE)
-  
+	docker-compose up development
+
+build:
+	docker build --target=production -t app:latest .
+
+wire:
+	cd pkg && go generate
+
 # .PHONY is used for reserving tasks words
-.PHONY: start before stop restart serve
+.PHONY: setup start build wire

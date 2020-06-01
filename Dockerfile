@@ -12,9 +12,14 @@ RUN go mod download && mkdir -p dist
 # Development Stage
 FROM base as dev
 
-RUN go get github.com/githubnemo/CompileDaemon && ls
+RUN go get github.com/githubnemo/CompileDaemon
 
 ENTRYPOINT CompileDaemon --build="go build -o dist/app cmd/main.go" --command=./dist/app
+
+# Test Stage
+FROM base as test
+
+ENTRYPOINT make test
 
 # Build Production Stage
 FROM base as builder

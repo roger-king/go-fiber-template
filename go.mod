@@ -8,6 +8,7 @@ require (
 	github.com/google/wire v0.4.0
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/viper v1.7.0
+	github.com/stretchr/testify v1.3.0
 	github.com/valyala/quicktemplate v1.5.0
 	golang.org/x/sys v0.0.0-20200523222454-059865788121 // indirect
 )

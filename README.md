@@ -1,11 +1,15 @@
 # Go-Fiber-Template
 
-My take on a production ready GoLang API server using:
+GoLang API server that utilizes Fiber and Google's Wire DI.
 
-- Fiber: NodeJS Express inspired router using FastHTTP
-- Wire: Google's take on Dependency Injection with GoLang
-- Testify: Unit testing framework
-- Docker: Local development workflow with hot-reloading and staged docker builds
+## How-To
+
+In order to re-use this template, we need to perform some manual steps: (TODO: to automate some steps plus some extra codegen)
+
+1. Do a global find and replace of `github.com/roger-king/gh-template`.
+   - This is needed because of how go does imports!
+   - WIP: automating this step!
+2. Ensure you have docker installed!
 
 ## Docs:
 

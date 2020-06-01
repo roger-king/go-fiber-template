@@ -10,5 +10,8 @@ build:
 wire:
 	cd pkg && go generate
 
+test:
+	go test -v ./pkg/...
+
 # .PHONY is used for reserving tasks words
 .PHONY: setup start build wire

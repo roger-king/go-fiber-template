@@ -8,6 +8,7 @@ package pkg
 import (
 	"github.com/gofiber/fiber"
 	"github.com/google/wire"
+	"github.com/roger-king/gh-template/pkg/config"
 	"github.com/roger-king/gh-template/pkg/handlers"
 	"github.com/roger-king/gh-template/pkg/repositories"
 )
@@ -15,7 +16,8 @@ import (
 // Injectors from server.go:
 
 func New() (*fiber.App, error) {
-	statusRepository := repositories.NewStatusRepository()
+	configConfig := config.NewConfig()
+	statusRepository := repositories.NewStatusRepository(configConfig)
 	statusHandler := handlers.NewStatusHandler(statusRepository)
 	app := NewApp(statusHandler)
 	return app, nil

@@ -4,13 +4,14 @@ import (
 	"github.com/gofiber/cors"
 	"github.com/gofiber/fiber"
 	"github.com/google/wire"
+	"github.com/roger-king/gh-template/pkg/config"
 	"github.com/roger-king/gh-template/pkg/handlers"
 	"github.com/roger-king/gh-template/pkg/repositories"
 	log "github.com/sirupsen/logrus"
 )
 
 // AppSet -
-var AppSet = wire.NewSet(NewApp, repositories.Set, handlers.Set)
+var AppSet = wire.NewSet(NewApp, repositories.Set, handlers.Set, config.Set)
 
 // NewApp -
 func NewApp(status *handlers.StatusHandler) *fiber.App {

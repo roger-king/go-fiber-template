@@ -1,6 +1,7 @@
 package repositories
 
 import (
+	"github.com/roger-king/gh-template/pkg/config"
 	"github.com/roger-king/gh-template/pkg/entities"
 )
 
@@ -16,10 +17,10 @@ type StatusRepositoryIface interface {
 }
 
 // NewStatusRepository - initializes the status service
-func NewStatusRepository() *StatusRepository {
+func NewStatusRepository(c *config.Config) *StatusRepository {
 	return &StatusRepository{
-		Version:     "v1.0.0",
-		Environment: "local",
+		Version:     c.Version,
+		Environment: c.GoEnv,
 	}
 }
 

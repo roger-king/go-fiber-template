@@ -11,6 +11,19 @@ In order to re-use this template, we need to perform some manual steps: (TODO: t
    - WIP: automating this step!
 2. Ensure you have docker installed!
 
+## Usage
+
+```bash
+   # run docker-compose command
+   make start
+
+   # generate wire_gen file
+   make wire
+
+   # production build
+   make build
+```
+
 ## Docs:
 
 - [Fiber](https://gofiber.io/)
